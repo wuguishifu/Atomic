@@ -1,5 +1,7 @@
 package com.bramerlabs.atomic.molecule;
 
+import com.bramerlabs.atomic.math.Vector3f;
+
 import java.util.ArrayList;
 
 public class Molecule {
@@ -16,7 +18,7 @@ public class Molecule {
     private int[][] bonds;
 
     // an ArrayList containing the positions of the
-    private ArrayList<float[]> positions;
+    private ArrayList<Vector3f> positions = new ArrayList<>();
 
     /**
      * constructor for specified list of atoms and bonds
@@ -46,5 +48,20 @@ public class Molecule {
         }
     }
 
+    /**
+     * sets the position of atoms in the molecule
+     * @param positions - an ArrayList of Vector3f containing the positions of the molecules
+     */
+    public void setPositions(ArrayList<Vector3f> positions) {
+        this.positions = positions;
+    }
+
+    /**
+     * getter method
+     * @return - an ArrayList of Vector3f containing the position of the molecules
+     */
+    public ArrayList<Vector3f> getPositions() {
+        return this.positions;
+    }
 
 }
